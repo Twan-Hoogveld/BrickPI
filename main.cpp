@@ -93,9 +93,9 @@ int main(){
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
 		goLeft(-20, 40);}
 	    //>2000 is zwart, >400 is zwart
-	sleep(0.3);
+	sleep(0.5);
 	stop();
-        sleep(0.2);
+        sleep(0.1);
     }
   
 }
