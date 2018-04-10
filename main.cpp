@@ -43,6 +43,11 @@ void goForward(){
     BP.set_motor_power(PORT_B, 20); 
 }
 
+void stop(){
+    BP.set_motor_power(PORT_C, 0);
+    BP.set_motor_power(PORT_B, 0);
+}
+
 int16_t measureColor() {
     BP.get_sensor(PORT_1, Color);
     uint16_t val = Color.reflected_red;
@@ -82,7 +87,9 @@ int main(){
 		goLeft(10, 20);}
 	else if((measureLight()) <2000 && int(measureColor()) > 400){
 		goRight(20, 10);}
-        sleep(0.5);
+	sleep(0.2);
+	stop();
+        sleep(1);
     }
   
 }
