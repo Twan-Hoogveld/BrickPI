@@ -74,6 +74,11 @@ int main(){
         cout << "RGB SENSOR (PORT1) :" << measureColor() << "\n";
         cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
         //Doe iets met de waarde
+	   
+	    if (measureLights <= ){
+	    	//do something	
+	    }
+	    
         sleep(2);
     }
   
