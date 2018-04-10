@@ -84,12 +84,15 @@ int main(){
 	if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goForward();}
 	    //<2000 is wit, < 400 is wit
-	else if((measureLight()) > 2000 && int(measureColor()) < 400){
+	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
 		goLeft(-10, 20);}
 	    //>2000 is zwart, < 400 is wit
-	else if((measureLight()) <2000 && int(measureColor()) > 400){
+	else if(int(measureLight()) < 2000 && int(measureColor()) > 400){
 		goRight(20, -10);}
 	    //<2000 is wit, > 400 is zwart
+	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
+		goLeft(-10, 20);}
+	    //>2000 is zwart, >400 is zwart
 	sleep(1);
 	stop();
         sleep(1);
