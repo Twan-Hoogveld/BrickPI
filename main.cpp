@@ -60,6 +60,7 @@ int16_t measureLight() {
 }
 
 float measureDistance(){
+    BP.get_sensor(PORT_2, Ultrasonic2);
     return Ultrasonic2.cm;
 }
 
