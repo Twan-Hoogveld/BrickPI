@@ -46,22 +46,19 @@ void goForward(int valWheel1, int valWheel2){
 int16_t measureColor() {
     BP.get_sensor(PORT_1, Color);
     uint16_t val = Color.reflected_red;
-    if (val < MINRGB) val = MINRGB;
-    if (val > MAXRGB) val = MAXRGB;
-    return (100*(val - MINRGB))/(MAXRGB - MINRGB);
+    return val;
 }
 
 int16_t measureLight() {
     BP.get_sensor(PORT_3, Light3);
     uint16_t val = Light3.reflected;
-    if (val < MINLGT) val = MINLGT;
-    if (val > MAXLGT) val = MAXLGT;
-    return (100*(val - MINLGT))/(MAXLGT - MINLGT);
+    return val;
 }
 
 float measureDistance(){
     BP.get_sensor(PORT_2, Ultrasonic2);
-    return Ultrasonic2.cm;
+    float val = Ultrasonic2.cm;
+    return val;
 }
 
 int main(){
@@ -71,6 +68,8 @@ int main(){
     BP.set_sensor_type(PORT_1, SENSOR_TYPE_NXT_COLOR_RED);
     BP.set_sensor_type(PORT_3, SENSOR_TYPE_NXT_LIGHT_ON);
     BP.set_sensor_type(PORT_2, SENSOR_TYPE_NXT_ULTRASONIC);
+	
+/*
 	
   //calibrate
   string regel;
@@ -100,7 +99,7 @@ int main(){
   MAXLGT = Light3.reflected;
   cout << "MAX = " << MAXLGT << endl;
   cout << "plaats KLEUR met de sensor half boven de lijn en voer in c gevolgd door enter" << endl;
-  cin >> regel;
+  cin >> regel; */
     
     while(true){
         cout << "LIGHT SENSOR (PORT3) :" << measureLight() << "\n";
