@@ -76,7 +76,7 @@ int main(){
     BP.offset_motor_encoder(PORT_B, BP.get_motor_encoder(PORT_B));
     BP.offset_motor_encoder(PORT_C, BP.get_motor_encoder(PORT_C));
 	
-    int keuze = 0;
+    int keuze = 2;
     
     while(true){
         cout << "LIGHT SENSOR (PORT3) :" << measureLight() << "\n";
@@ -93,9 +93,11 @@ int main(){
 		goRight(50, -20);}
 	    //<2000 is wit, > 400 is zwart
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
-		if(keuze%2 == 0){
+		if(keuze % 2 == 0){
+			cout << "links:  " << keuze << "/n";
 			goLeft(-20, 50);}
 		else{
+			cout << "rechts:  " << keuze << "/n";
 			goRight(50,-20);}
 		keuze++;}
 	    //>2000 is zwart, >400 is zwart
