@@ -1,5 +1,5 @@
 /*
-Port_1 = RGB  
+Port_1 = RGB 
 Port_2 = ULTRASONIC
 Port_3 = Kleur
 
