@@ -102,8 +102,8 @@ int main(){
   cin >> regel;
     
     while(true){
-        cout << "LIGHT SENSOR (PORT3) :" << Light3.reflected << "\n";
-        cout << "RGB SENSOR (PORT1) :" << Color.reflected_red << "\n";
+        cout << "LIGHT SENSOR (PORT3) :" << measureLight() << "\n";
+        cout << "RGB SENSOR (PORT1) :" << measureColor() << "\n";
         cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
         //Doe iets met de waarde
         sleep(2);
