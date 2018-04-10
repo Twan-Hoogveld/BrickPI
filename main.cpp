@@ -20,7 +20,7 @@ void exit_signal_handler(int signo);
 
 uint16_t MIN;
 uint16_t MAX;
-sensor_color_t Color1;
+sensor_color_t Color;
 sensor_light_t Light3;
 sensor_ultrasonic_t Ultrasonic2;
 
@@ -43,7 +43,7 @@ void goForward(int valWheel1, int valWheel2){
 
 int16_t measureColor() {
     BP.get_sensor(PORT_1, Color1);
-    uint16_t val = Color1.Color;
+    uint16_t val = Color.Color1;
     if (val < MIN) val = MIN;
     if (val > MAX) val = MAX;
     return (100*(val - MIN))/(MAX - MIN);
@@ -69,8 +69,8 @@ int main(){
     BP.set_sensor_type(PORT_2, SENSOR_TYPE_NXT_ULTRASONIC);
     
     while(true){
-        cout << "RGB SENSOR (PORT3)" : << Light3.reflected << "\n";
-        cout << "LIGHT SENSOR (PORT1)" : << Color1.reflected_red << "\n";
+        cout << "RGB SENSOR (PORT3) :" << Light3.reflected << "\n";
+        cout << "LIGHT SENSOR (PORT1) :" << Color.reflected_red << "\n";
         cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
         //Doe iets met de waarde
         sleep(2);
