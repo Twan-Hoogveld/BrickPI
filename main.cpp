@@ -28,7 +28,7 @@ sensor_ultrasonic_t Ultrasonic2;
 
 
 void goLeft(int valWheel1, int valWheel2){
-	BP.set_motor_power(PORT_C, valWheel1);
+    BP.set_motor_power(PORT_C, valWheel1);
     BP.set_motor_power(PORT_B, valWheel2); // moet harder gaan dan motor C (links)
 }
 
@@ -37,10 +37,10 @@ void goRight(int valWheel1, int valWheel2){
     BP.set_motor_power(PORT_B, valWheel2); 
 }
 
-void goForward(int valWheel1, int valWheel2){
+void goForward(){
     //Motoren gaan even snel
-    BP.set_motor_power(PORT_C, valWheel1);
-    BP.set_motor_power(PORT_B, valWheel2); 
+    BP.set_motor_power(PORT_C, 20);
+    BP.set_motor_power(PORT_B, 20); 
 }
 
 int16_t measureColor() {
@@ -74,7 +74,13 @@ int main(){
         cout << "RGB SENSOR (PORT1) :" << measureColor() << "\n";
         cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
         //Doe iets met de waarde
-        sleep(2);
+	if(measureLight() < 2000 && measureColor < 400){
+		goForward();}
+	else if(measureLight() > 2000 && measureColor < 400){
+		goLeft(10, 20);}
+	else if(measureLight() <2000 && measureColor > 400){
+		goRight(20, 10);}
+        sleep(0.5);
     }
   
 }
@@ -86,4 +92,4 @@ void exit_signal_handler(int signo){
   }
 }
 
-//hallo
+
