@@ -81,7 +81,7 @@ int main(){
     while(true){
   //      cout << "LIGHT SENSOR (PORT3) :" << measureLight() << "\n";
 //        cout << "RGB SENSOR (PORT1) :" << measureColor() << "\n";
-  //      cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
+	cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
         //Doe iets met de waarde
 	if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goForward();}
