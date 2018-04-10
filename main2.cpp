@@ -90,7 +90,7 @@ void doit(){
 	    while(true){
         cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
         //Doe iets met de waarde
-	while(measureDistance() < 10){
+	if(measureDistance() < 10){
 		objectLoop();
 		sleep(1);
 	}
@@ -124,7 +124,8 @@ int main(){
     BP.offset_motor_encoder(PORT_B, BP.get_motor_encoder(PORT_B));
     BP.offset_motor_encoder(PORT_C, BP.get_motor_encoder(PORT_C));
     
-    doit();
+    //doit();
+	cout << measureDistance();
 }
 
 
