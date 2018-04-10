@@ -29,7 +29,7 @@ sensor_ultrasonic_t Ultrasonic2;
 
 void goLeft(int valWheel1, int valWheel2){
 	BP.set_motor_power(PORT_C, valWheel1);
-    BP.set_motor_power(PORT_B, valWheel2); // moet harder gaan dan motor C (links)
+	BP.set_motor_power(PORT_B, valWheel2); // moet harder gaan dan motor C (links)
 }
 
 void goRight(int valWheel1, int valWheel2){
