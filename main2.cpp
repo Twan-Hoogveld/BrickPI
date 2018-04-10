@@ -26,12 +26,6 @@ sensor_color_t Color;
 sensor_light_t Light3;
 sensor_ultrasonic_t Ultrasonic2;
 
-void objectLoop(){
-	hardLinks();
-	hardForward();
-	hardRechts();
-}
-
 void hardLinks(){
 	BP.set_motor_position_relative(PORT_C, -180);
 	BP.set_motor_position_relative(PORT_B, 180);
@@ -86,6 +80,11 @@ float measureDistance(){
     return val;
 }
 
+void objectLoop(){
+	hardLinks();
+	hardForward();
+	hardRechts();
+}
 
 void doit(){
 	    while(true){
@@ -95,7 +94,7 @@ void doit(){
 		objectLoop();		
 	}
 		
-	else if(int(measureLight()) < 2000 && int(measureColor()) < 400){
+        if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goForward();}
 	    //<2000 is wit, < 400 is wit
 	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
