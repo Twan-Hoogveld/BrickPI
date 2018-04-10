@@ -70,17 +70,32 @@ int main(){
 	
   //calibrate
   string regel;
-  cout << "plaats sensor recht boven de lijn (zwart) en voer in a gevolgd door enter" << endl;
+  cout << "plaats RGB recht boven de lijn (zwart) en voer in a gevolgd door enter" << endl;
   cin >> regel;
-  BP.get_sensor(PORT_1, mycolor);
-  MIN = mycolor.reflected_red;
+  BP.get_sensor(PORT_1, Color);
+  MIN = Color.reflected_red;
   cout << "MIN = " << MIN << endl;
-  cout << "plaats sensor helemaal naast de lijn (wit) en voer in b gevolgd door enter" << endl;
+  cout << "plaats RGB helemaal naast de lijn (wit) en voer in b gevolgd door enter" << endl;
   cin >> regel;
-  BP.get_sensor(PORT_1, mycolor);
-  MAX = mycolor.reflected_red;
+  BP.get_sensor(PORT_1, Color);
+  MAX = Color.reflected_red;
   cout << "MAX = " << MAX << endl;
-  cout << "plaats het voertuig met de sensor half boven de lijn en voer in c gevolgd door enter" << endl;
+  cout << "plaats het voertuig met de RGB half boven de lijn en voer in c gevolgd door enter" << endl;
+  cin >> regel;
+	
+  //calibrate
+  string regel;
+  cout << "plaats KLEUR recht boven de lijn (zwart) en voer in a gevolgd door enter" << endl;
+  cin >> regel;
+  BP.get_sensor(PORT_3, Light3);
+  MIN = Light3.reflected_red;
+  cout << "MIN = " << MIN << endl;
+  cout << "plaats KLEUR helemaal naast de lijn (wit) en voer in b gevolgd door enter" << endl;
+  cin >> regel;
+  BP.get_sensor(PORT_3, Light3);
+  MAX = Light3.reflected_red;
+  cout << "MAX = " << MAX << endl;
+  cout << "plaats KLEUR met de sensor half boven de lijn en voer in c gevolgd door enter" << endl;
   cin >> regel;
     
     while(true){
