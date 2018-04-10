@@ -18,8 +18,10 @@ BrickPi3 BP;
 
 void exit_signal_handler(int signo);
 
-uint16_t MIN;
-uint16_t MAX;
+uint16_t MINRGB;
+uint16_t MAXRGB;
+uint16_t MINLGT;
+uint16_t MAXLGT;
 sensor_color_t Color;
 sensor_light_t Light3;
 sensor_ultrasonic_t Ultrasonic2;
@@ -44,26 +46,27 @@ void goForward(int valWheel1, int valWheel2){
 int16_t measureColor() {
     BP.get_sensor(PORT_1, Color);
     uint16_t val = Color.reflected_red;
-    if (val < MIN) val = MIN;
-    if (val > MAX) val = MAX;
-    return (100*(val - MIN))/(MAX - MIN);
+    if (val < MINRGB) val = MINRGB;
+    if (val > MAXRGB) val = MAXRGB;
+    return (100*(val - MINRGB))/(MAXRGB - MINRGB);
 }
 
 int16_t measureLight() {
     BP.get_sensor(PORT_3, Light3);
     uint16_t val = Light3.reflected;
-    if (val < MIN) val = MIN;
-    if (val > MAX) val = MAX;
-    return (100*(val - MIN))/(MAX - MIN);
+    if (val < MINLGT) val = MINLGT;
+    if (val > MAXLGT) val = MAXLGT;
+    return (100*(val - MINLGT))/(MAXLGT - MINLGT);
 }
 
-int16_t measureDistance(){
+float measureDistance(){
     return Ultrasonic2.cm;
 }
 
 int main(){
     signal(SIGINT, exit_signal_handler);
     BP.detect();
+    int error;
     BP.set_sensor_type(PORT_1, SENSOR_TYPE_NXT_COLOR_RED);
     BP.set_sensor_type(PORT_3, SENSOR_TYPE_NXT_LIGHT_ON);
     BP.set_sensor_type(PORT_2, SENSOR_TYPE_NXT_ULTRASONIC);
@@ -73,13 +76,13 @@ int main(){
   cout << "plaats RGB recht boven de lijn (zwart) en voer in a gevolgd door enter" << endl;
   cin >> regel;
   BP.get_sensor(PORT_1, Color);
-  MIN = Color.reflected_red;
-  cout << "MIN = " << MIN << endl;
+  MINRGB = Color.reflected_red;
+  cout << "MIN = " << MINRGB << endl;
   cout << "plaats RGB helemaal naast de lijn (wit) en voer in b gevolgd door enter" << endl;
   cin >> regel;
   BP.get_sensor(PORT_1, Color);
-  MAX = Color.reflected_red;
-  cout << "MAX = " << MAX << endl;
+  MAXRGB = Color.reflected_red;
+  cout << "MAX = " << MAXRGB << endl;
   cout << "plaats het voertuig met de RGB half boven de lijn en voer in c gevolgd door enter" << endl;
   cin >> regel;
 	
@@ -88,13 +91,13 @@ int main(){
   cout << "plaats KLEUR recht boven de lijn (zwart) en voer in a gevolgd door enter" << endl;
   cin >> regel;
   BP.get_sensor(PORT_3, Light3);
-  MIN = Light3.reflected_red;
-  cout << "MIN = " << MIN << endl;
+  MINLGT = Light3.reflected_red;
+  cout << "MIN = " << MINLGT << endl;
   cout << "plaats KLEUR helemaal naast de lijn (wit) en voer in b gevolgd door enter" << endl;
   cin >> regel;
   BP.get_sensor(PORT_3, Light3);
-  MAX = Light3.reflected_red;
-  cout << "MAX = " << MAX << endl;
+  MAXLGT = Light3.reflected_red;
+  cout << "MAX = " << MAXLGT << endl;
   cout << "plaats KLEUR met de sensor half boven de lijn en voer in c gevolgd door enter" << endl;
   cin >> regel;
     
