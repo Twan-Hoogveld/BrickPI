@@ -68,38 +68,6 @@ int main(){
     BP.set_sensor_type(PORT_1, SENSOR_TYPE_NXT_COLOR_RED);
     BP.set_sensor_type(PORT_3, SENSOR_TYPE_NXT_LIGHT_ON);
     BP.set_sensor_type(PORT_2, SENSOR_TYPE_NXT_ULTRASONIC);
-	
-/*
-	
-  //calibrate
-  string regel;
-  cout << "plaats RGB recht boven de lijn (zwart) en voer in a gevolgd door enter" << endl;
-  cin >> regel;
-  BP.get_sensor(PORT_1, Color);
-  MINRGB = Color.reflected_red;
-  cout << "MIN = " << MINRGB << endl;
-  cout << "plaats RGB helemaal naast de lijn (wit) en voer in b gevolgd door enter" << endl;
-  cin >> regel;
-  BP.get_sensor(PORT_1, Color);
-  MAXRGB = Color.reflected_red;
-  cout << "MAX = " << MAXRGB << endl;
-  cout << "plaats het voertuig met de RGB half boven de lijn en voer in c gevolgd door enter" << endl;
-  cin >> regel;
-	
-  //calibrate
-  
-  cout << "plaats KLEUR recht boven de lijn (zwart) en voer in a gevolgd door enter" << endl;
-  cin >> regel;
-  BP.get_sensor(PORT_3, Light3);
-  MINLGT = Light3.reflected;
-  cout << "MIN = " << MINLGT << endl;
-  cout << "plaats KLEUR helemaal naast de lijn (wit) en voer in b gevolgd door enter" << endl;
-  cin >> regel;
-  BP.get_sensor(PORT_3, Light3);
-  MAXLGT = Light3.reflected;
-  cout << "MAX = " << MAXLGT << endl;
-  cout << "plaats KLEUR met de sensor half boven de lijn en voer in c gevolgd door enter" << endl;
-  cin >> regel; */
     
     while(true){
         cout << "LIGHT SENSOR (PORT3) :" << measureLight() << "\n";
