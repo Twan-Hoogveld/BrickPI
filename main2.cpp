@@ -91,7 +91,8 @@ void doit(){
         cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
         //Doe iets met de waarde
 	while(measureDistance() < 10){
-		objectLoop();		
+		objectLoop();
+		sleep(1);
 	}
 		
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
