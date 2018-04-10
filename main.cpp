@@ -42,8 +42,8 @@ void goForward(int valWheel1, int valWheel2){
 }
 
 int16_t measureColor() {
-    BP.get_sensor(PORT_1, Color1);
-    uint16_t val = Color.Color1;
+    BP.get_sensor(PORT_1, Color);
+    uint16_t val = Color.reflected_red;
     if (val < MIN) val = MIN;
     if (val > MAX) val = MAX;
     return (100*(val - MIN))/(MAX - MIN);
