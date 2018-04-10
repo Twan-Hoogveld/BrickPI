@@ -68,17 +68,19 @@ int main(){
     BP.set_sensor_type(PORT_1, SENSOR_TYPE_NXT_COLOR_RED);
     BP.set_sensor_type(PORT_3, SENSOR_TYPE_NXT_LIGHT_ON);
     BP.set_sensor_type(PORT_2, SENSOR_TYPE_NXT_ULTRASONIC);
+    BP.offset_motor_encoder(PORT_B, BP.get_motor_encoder(PORT_B));
+    BP.offset_motor_encoder(PORT_C, BP.get_motor_encoder(PORT_C));
     
     while(true){
         cout << "LIGHT SENSOR (PORT3) :" << measureLight() << "\n";
         cout << "RGB SENSOR (PORT1) :" << measureColor() << "\n";
         cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
         //Doe iets met de waarde
-	if(measureLight() < 2000 && measureColor < 400){
+	if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goForward();}
-	else if(measureLight() > 2000 && measureColor < 400){
+	else if((measureLight()) > 2000 && int(measureColor()) < 400){
 		goLeft(10, 20);}
-	else if(measureLight() <2000 && measureColor > 400){
+	else if((measureLight()) <2000 && int(measureColor()) > 400){
 		goRight(20, 10);}
         sleep(0.5);
     }
