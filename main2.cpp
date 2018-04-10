@@ -47,34 +47,6 @@ void hardForward(){
 	BP.set_motor_position_relative(PORT_B, 180);
 }
 
-
-void doit(){
-	    while(true){
-        cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
-        //Doe iets met de waarde
-	while(measureDistance() < 10.0){
-		objectLoop();		
-	}
-		
-	else if(int(measureLight()) < 2000 && int(measureColor()) < 400){
-		goForward();}
-	    //<2000 is wit, < 400 is wit
-	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
-		goLeft(-20, 50);}
-	    //>2000 is zwart, < 400 is wit
-	else if(int(measureLight()) < 2000 && int(measureColor()) > 400){
-		goRight(50, -20);}
-	    //<2000 is wit, > 400 is zwart
-	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
-			goLeft(-20, 50);}
-	    //>2000 is zwart, >400 is zwart
-	usleep(50000);
-	stop();
-  	usleep(10000);
-    }	
-}
-
-
 void goLeft(int valWheel1, int valWheel2){
     BP.set_motor_power(PORT_C, valWheel1);
     BP.set_motor_power(PORT_B, valWheel2); // moet harder gaan dan motor C (links)
@@ -113,6 +85,34 @@ float measureDistance(){
     float val = Ultrasonic2.cm;
     return val;
 }
+
+
+void doit(){
+	    while(true){
+        cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
+        //Doe iets met de waarde
+	while(measureDistance() < 10.0){
+		objectLoop();		
+	}
+		
+	else if(int(measureLight()) < 2000 && int(measureColor()) < 400){
+		goForward();}
+	    //<2000 is wit, < 400 is wit
+	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
+		goLeft(-20, 50);}
+	    //>2000 is zwart, < 400 is wit
+	else if(int(measureLight()) < 2000 && int(measureColor()) > 400){
+		goRight(50, -20);}
+	    //<2000 is wit, > 400 is zwart
+	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
+			goLeft(-20, 50);}
+	    //>2000 is zwart, >400 is zwart
+	usleep(50000);
+	stop();
+  	usleep(10000);
+    }	
+}
+
 
 int main(){
     signal(SIGINT, exit_signal_handler);
