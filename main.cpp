@@ -87,7 +87,7 @@ int main(){
   cin >> regel;
 	
   //calibrate
-  string regel;
+  
   cout << "plaats KLEUR recht boven de lijn (zwart) en voer in a gevolgd door enter" << endl;
   cin >> regel;
   BP.get_sensor(PORT_3, Light3);
