@@ -87,7 +87,7 @@ int main(){
 		goLeft(10, 20);}
 	else if((measureLight()) <2000 && int(measureColor()) > 400){
 		goRight(20, 10);}
-	sleep(0.2);
+	sleep(2);
 	stop();
         sleep(1);
     }
