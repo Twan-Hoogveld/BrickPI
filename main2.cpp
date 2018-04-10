@@ -26,6 +26,54 @@ sensor_color_t Color;
 sensor_light_t Light3;
 sensor_ultrasonic_t Ultrasonic2;
 
+void objectLoop(){
+	hardLinks();
+	hardForward();
+	hardRechts();
+}
+
+void hardLinks(){
+	BP.set_motor_position_relative(PORT_C, -180);
+	BP.set_motor_position_relative(PORT_B, 180);
+}
+
+void hardRechts(){
+	BP.set_motor_position_relative(PORT_C, 180);
+	BP.set_motor_position_relative(PORT_B, -180);
+}
+
+void hardForward(){
+	BP.set_motor_position_relative(PORT_C, 180);
+	BP.set_motor_position_relative(PORT_B, 180);
+}
+
+
+void doit(){
+	    while(true){
+        cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
+        //Doe iets met de waarde
+	while(measureDistance() < 10.0){
+		objectLoop();		
+	}
+		
+	else if(int(measureLight()) < 2000 && int(measureColor()) < 400){
+		goForward();}
+	    //<2000 is wit, < 400 is wit
+	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
+		goLeft(-20, 50);}
+	    //>2000 is zwart, < 400 is wit
+	else if(int(measureLight()) < 2000 && int(measureColor()) > 400){
+		goRight(50, -20);}
+	    //<2000 is wit, > 400 is zwart
+	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
+			goLeft(-20, 50);}
+	    //>2000 is zwart, >400 is zwart
+	usleep(50000);
+	stop();
+  	usleep(10000);
+    }	
+}
+
 
 void goLeft(int valWheel1, int valWheel2){
     BP.set_motor_power(PORT_C, valWheel1);
@@ -75,32 +123,13 @@ int main(){
     BP.set_sensor_type(PORT_2, SENSOR_TYPE_NXT_ULTRASONIC);
     BP.offset_motor_encoder(PORT_B, BP.get_motor_encoder(PORT_B));
     BP.offset_motor_encoder(PORT_C, BP.get_motor_encoder(PORT_C));
-	
-    int keuze = 2;
     
     while(true){
-  //      cout << "LIGHT SENSOR (PORT3) :" << measureLight() << "\n";
-//        cout << "RGB SENSOR (PORT1) :" << measureColor() << "\n";
-  //      cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
-        //Doe iets met de waarde
-	if(int(measureLight()) < 2000 && int(measureColor()) < 400){
-		goForward();}
-	    //<2000 is wit, < 400 is wit
-	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
-		goLeft(-20, 50);}
-	    //>2000 is zwart, < 400 is wit
-	else if(int(measureLight()) < 2000 && int(measureColor()) > 400){
-		goRight(50, -20);}
-	    //<2000 is wit, > 400 is zwart
-	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
-			goLeft(-20, 50);}
-	    //>2000 is zwart, >400 is zwart
-	usleep(50000);
-	stop();
-  usleep(10000);
+	    doit();
     }
-  
-}
+ }
+
+
 
 void exit_signal_handler(int signo){
   if(signo == SIGINT){
