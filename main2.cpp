@@ -82,7 +82,7 @@ float measureDistance(){
 
 void checkObject(){
 		sleep(2);
-		cout << "Links om object van zijkant te scannen." << "\n";
+		cout << "Links draaien om object van zijkant te scannen." << "\n";
 		hardLinks();
 		cout << "Check of object er nog staat." << "\n";
 		sleep(2);
@@ -98,7 +98,10 @@ void checkObject(){
 			checkObject();
 		}
 		else {
-			cout << "afstand is meer dan 40 cm, loop eindigt, zoek lijn op" << "\n";	
+			cout << "afstand is meer dan 40 cm, loop eindigt, zoek lijn op" << "\n";
+			hardForward(540);
+			sleep(2);
+			hardRechts();
 		}
 	}
 
@@ -116,7 +119,6 @@ void objectLoop(){
 	hardForward(540);
 	sleep(2);
 	cout << "Je zou nu naast het object moeten staan" << "\n";
-	//JE BENT HIER NAAST HET OBJECT EN JE KIJKT ER LANGS 
 	//Check of je het object nog ziet
 	checkObject();
 }
@@ -139,6 +141,7 @@ void doit(){
 			goLeft(-20, 50);}
 	    //>2000 is zwart, >400 is zwart
 	usleep(50000);
+	cout << "Lijn volgen" << "\n";
 	stop();
   	usleep(10000);
     }	
