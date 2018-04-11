@@ -84,14 +84,14 @@ void objectLoop(){
 	cout << "Links" << "\n";
 	hardLinks();
 	cout << "Sleep" << "\n";
-	sleep(1);
+	//sleep(1);
 	cout << "Sleep afgelopen" << "\n";
 	cout << "vooruit" << "\n";
 	hardForward();
-	sleep(1);
+	//sleep(1);
 	cout << "rechts" << "\n";
 	hardRechts();
-	sleep(1);
+	//sleep(1);
 }
 
 void doit(){
