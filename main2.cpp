@@ -81,16 +81,16 @@ float measureDistance(){
 }
 
 void checkObject(){
-		sleep(1);
+		sleep(2);
 		cout << "Links" << "\n";
 		hardLinks();
 		cout << "Check het object" << "\n";
-		sleep(1);
+		sleep(2);
 		//Je kijkt nu tegen de zijkant van het object
 		if (measureDistance() < 40){
 			cout << "Rechts" << "\n";
 			hardRechts();
-			sleep(1);
+			sleep(2);
 			cout << "Vooruit 180" << "\n";
 			hardForward(360);
 			cout << "rerun" << "\n";
@@ -104,21 +104,21 @@ void checkObject(){
 void objectLoop(){
 	//Het object is gescant,ga naar rechts
 	hardRechts();
-	sleep(1);
+	sleep(2);
 	//Ga vooruit
 	hardForward(540);
-	sleep(1);
+	sleep(2);
 	//Ga naar links
 	hardLinks();
-	sleep(1);
+	sleep(2);
 	cout << "vooruit gaan om object te dodgen" << "\n";
 	hardForward(540);
-	sleep(1);
+	sleep(2);
 	cout << "Je zou nu naast het object moeten staan" << "\n";
 	//JE BENT HIER NAAST HET OBJECT EN JE KIJKT ER LANGS 
 	//Check of je het object nog ziet
 	checkObject();
-	sleep(1);
+	sleep(2);
 }
 
 void doit(){
