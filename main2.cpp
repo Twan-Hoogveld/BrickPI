@@ -99,7 +99,10 @@ void doit(){
 	if(measureDistance() <= 10 && measureDistance() > 0){
 		objectLoop();
 	}
-		
+	else{
+		goForward();
+		}
+	/*	
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goForward();}
 	    //<2000 is wit, < 400 is wit
@@ -112,6 +115,7 @@ void doit(){
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
 			goLeft(-20, 50);}
 	    //>2000 is zwart, >400 is zwart
+	*/
 	usleep(50000);
 	stop();
   	usleep(10000);
