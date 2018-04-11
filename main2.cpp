@@ -86,7 +86,7 @@ void checkObject(){
 		sleep(1);
 		//Je kijkt nu tegen de zijkant van het object
 		if (measureDistance() < 40){
-			hardRechts();
+			hardLinks();
 			hardForward();
 			usleep(5000);
 			checkObject();
