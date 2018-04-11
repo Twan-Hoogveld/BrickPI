@@ -96,7 +96,7 @@ void objectLoop(){
 
 void doit(){
 	while(true){
-	if(measureDistance() <= 10 && > measureDistance() > 0){
+	if(measureDistance() <= 10 && measureDistance() > 0){
 		objectLoop();
 	}
 		
