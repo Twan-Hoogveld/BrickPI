@@ -82,33 +82,36 @@ float measureDistance(){
 
 void checkObject(){
 		sleep(2);
-		cout << "Links" << "\n";
+		cout << "Links om object van zijkant te scannen." << "\n";
 		hardLinks();
-		cout << "Check het object" << "\n";
+		cout << "Check of object er nog staat." << "\n";
 		sleep(2);
 		//Je kijkt nu tegen de zijkant van het object
 		if (measureDistance() < 40){
-			cout << "Rechts" << "\n";
+			cout << "Object staat nog voor je" << "\n";
+			cout << "Naar rechts draaien" << "\n";
 			hardRechts();
 			sleep(2);
-			cout << "Vooruit 180" << "\n";
+			cout << "Vooruit rijden" << "\n";
 			hardForward(360);
-			cout << "rerun" << "\n";
+			cout << "rerun checkObject functie" << "\n";
 			checkObject();
 		}
 		else {
-			cout << "afstand is meer dan 40 cm" << "\n";	
+			cout << "afstand is meer dan 40 cm, loop eindigt, zoek lijn op" << "\n";	
 		}
 	}
 
 void objectLoop(){
-	//Het object is gescant,ga naar rechts
+	cout << "Het object is gescanned, robot gaat naar rechts." << "\n";
 	hardRechts();
+	stop();
 	sleep(2);
-	//Ga vooruit
+	cout << "Vooruit gaan om object te kunnen dodgen." << "\n";
 	hardForward(540);
+	stop();
 	sleep(2);
-	//Ga naar links
+	cout << "Ga naar links om object te scannen." << "\n";
 	hardLinks();
 	sleep(2);
 	cout << "vooruit gaan om object te dodgen" << "\n";
@@ -118,7 +121,6 @@ void objectLoop(){
 	//JE BENT HIER NAAST HET OBJECT EN JE KIJKT ER LANGS 
 	//Check of je het object nog ziet
 	checkObject();
-	sleep(2);
 }
 
 void doit(){
