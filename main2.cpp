@@ -84,7 +84,6 @@ void checkObject(){
 		sleep(1);
 		cout << "Links" << "\n";
 		hardLinks();
-
 		cout << "Check het object" << "\n";
 		sleep(1);
 		//Je kijkt nu tegen de zijkant van het object
@@ -93,7 +92,7 @@ void checkObject(){
 			hardRechts();
 			sleep(1);
 			cout << "Vooruit 180" << "\n";
-			hardForward(180);
+			hardForward(360);
 			cout << "rerun" << "\n";
 			checkObject();
 		}
