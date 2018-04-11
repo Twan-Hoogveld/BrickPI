@@ -27,13 +27,13 @@ sensor_light_t Light3;
 sensor_ultrasonic_t Ultrasonic2;
 
 void hardLinks(){
-	BP.set_motor_position_relative(PORT_C, 220);
-	BP.set_motor_position_relative(PORT_B, -220);
+	BP.set_motor_position_relative(PORT_C, 230);
+	BP.set_motor_position_relative(PORT_B, -230);
 }
 
 void hardRechts(){
-	BP.set_motor_position_relative(PORT_C, -220);
-	BP.set_motor_position_relative(PORT_B, 220);
+	BP.set_motor_position_relative(PORT_C, -230);
+	BP.set_motor_position_relative(PORT_B, 230);
 }
 
 void hardForward(){
