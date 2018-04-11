@@ -53,8 +53,8 @@ void goRight(int valWheel1, int valWheel2){
 
 void goForward(){
     //Motoren gaan even snel
-    BP.set_motor_power(PORT_C, 20);
-    BP.set_motor_power(PORT_B, 21); 
+    BP.set_motor_power(PORT_C, 30);
+    BP.set_motor_power(PORT_B, 30); 
 }
 
 void stop(){
