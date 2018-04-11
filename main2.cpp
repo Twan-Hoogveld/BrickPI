@@ -81,9 +81,15 @@ float measureDistance(){
 }
 
 void objectLoop(){
+	cout << "Links" << "\n";
 	hardLinks();
+	sleep(1);
+	cout << "vooruit" << "\n";
 	hardForward();
+	sleep(1);
+	cout << "rechts" << "\n";
 	hardRechts();
+	sleep(1);
 }
 
 void doit(){
