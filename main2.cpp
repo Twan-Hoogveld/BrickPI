@@ -86,9 +86,11 @@ void checkObject(){
 		sleep(1);
 		//Je kijkt nu tegen de zijkant van het object
 		if (measureDistance() < 40){
+			cout << "RECHTS" << "\n";
 			hardRechts();
+			cout << "VOORUIT" << "\n";
 			hardForward();
-			usleep(5000);
+			sleep(1);
 			checkObject();
 		}
 		else {
