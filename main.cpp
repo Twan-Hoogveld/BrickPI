@@ -92,14 +92,14 @@ int main(){
 	else if(int(measureLight()) < 2000 && int(measureColor()) > 300){
 		goRight(50, -20);}
 	    //<2000 is wit, > 400 is zwart
-	else if(int(measureLight()) > 2000 && int(measureColor()) > 300){
-		if(keuze % 2 == 0){
-			cout << "links:  " << keuze << "\n";
-			goLeft(-20, 50);}
-		else{
-			cout << "rechts:  " << keuze << "\n";
-			goRight(50,-20);}
-		keuze++;}
+// 	else if(int(measureLight()) > 2000 && int(measureColor()) > 300){
+// 		if(keuze % 2 == 0){
+// 			cout << "links:  " << keuze << "\n";
+// 			goLeft(-20, 50);}
+// 		else{
+// 			cout << "rechts:  " << keuze << "\n";
+// 			goRight(50,-20);}
+// 		keuze++;}
 	    //>2000 is zwart, >400 is zwart
 	usleep(50000);
 	stop();
