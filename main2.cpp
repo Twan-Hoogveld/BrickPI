@@ -27,13 +27,13 @@ sensor_light_t Light3;
 sensor_ultrasonic_t Ultrasonic2;
 
 void hardLinks(){
-	BP.set_motor_position_relative(PORT_C, -180);
-	BP.set_motor_position_relative(PORT_B, 180);
+	BP.set_motor_position_relative(PORT_C, 180);
+	BP.set_motor_position_relative(PORT_B, -180);
 }
 
 void hardRechts(){
-	BP.set_motor_position_relative(PORT_C, 180);
-	BP.set_motor_position_relative(PORT_B, -180);
+	BP.set_motor_position_relative(PORT_C, -180);
+	BP.set_motor_position_relative(PORT_B, 180);
 }
 
 void hardForward(){
@@ -84,14 +84,14 @@ void objectLoop(){
 	cout << "Links" << "\n";
 	hardLinks();
 	cout << "Sleep" << "\n";
-	//sleep(1);
+	sleep(1);
 	cout << "Sleep afgelopen" << "\n";
 	cout << "vooruit" << "\n";
 	hardForward();
-	//sleep(1);
+	sleep(1);
 	cout << "rechts" << "\n";
 	hardRechts();
-	//sleep(1);
+	sleep(1);
 }
 
 void doit(){
@@ -101,6 +101,8 @@ void doit(){
 	}
 	else{
 		goForward();
+		sleep(1);
+		cout << "vooruit gaan" << "\n";
 		}
 	/*	
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
