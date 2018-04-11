@@ -81,7 +81,7 @@ float measureDistance(){
 }
 
 void checkObject(){
-		cout << "Je zit nu in checkObject" << "\n"
+		cout << "Je zit nu in checkObject" << "\n";
 		hardLinks();
 		sleep(1);
 		//Je kijkt nu tegen de zijkant van het object
