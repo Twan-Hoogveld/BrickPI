@@ -91,7 +91,6 @@ void checkObject(){
 			checkObject();
 		}
 	}
-}
 
 void objectLoop(){
 	//Het object is gescant,ga naar rechts
