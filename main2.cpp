@@ -27,18 +27,18 @@ sensor_light_t Light3;
 sensor_ultrasonic_t Ultrasonic2;
 
 void hardLinks(){
-	BP.set_motor_position_relative(PORT_C, 210);
-	BP.set_motor_position_relative(PORT_B, -210);
+	BP.set_motor_position_relative(PORT_C, 220);
+	BP.set_motor_position_relative(PORT_B, -220);
 }
 
 void hardRechts(){
-	BP.set_motor_position_relative(PORT_C, -210);
-	BP.set_motor_position_relative(PORT_B, 210);
+	BP.set_motor_position_relative(PORT_C, -220);
+	BP.set_motor_position_relative(PORT_B, 220);
 }
 
 void hardForward(){
-	BP.set_motor_position_relative(PORT_C, 360);
-	BP.set_motor_position_relative(PORT_B, 360);
+	BP.set_motor_position_relative(PORT_C, 540);
+	BP.set_motor_position_relative(PORT_B, 540);
 }
 
 void goLeft(int valWheel1, int valWheel2){
@@ -96,7 +96,7 @@ void objectLoop(){
 
 void doit(){
 	while(true){
-	if(measureDistance() <= 15 && measureDistance() > 0){
+	if(measureDistance() <= 20 && measureDistance() > 0){
 		objectLoop();
 	}
 	else{
