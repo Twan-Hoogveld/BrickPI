@@ -125,13 +125,7 @@ void doit(){
 	while(true){
 	if(measureDistance() <= 20 && measureDistance() > 0){
 		objectLoop();
-	}
-	else{
-		goForward();
-		sleep(1);
-		cout << "vooruit gaan" << "\n";
-		}
-		
+	}	
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goForward();}
 	    //<2000 is wit, < 400 is wit
