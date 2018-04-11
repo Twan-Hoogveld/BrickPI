@@ -101,9 +101,9 @@ int main(){
 			goRight(50,-20);}
 		keuze++;}
 	    //>2000 is zwart, >400 is zwart
-	usleep(500000);
+	usleep(50000);
 	stop();
-        usleep(500000);
+        usleep(50000);
     }
   
 }
