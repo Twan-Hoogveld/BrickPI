@@ -90,10 +90,6 @@ void doit(){
 	while(true){
         cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
         //Doe iets met de waarde
-	if(measureDistance() < 10){
-		objectLoop();
-		sleep(1);
-	}
 		
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goForward();}
