@@ -27,13 +27,13 @@ sensor_light_t Light3;
 sensor_ultrasonic_t Ultrasonic2;
 
 void hardLinks(){
-	BP.set_motor_position_relative(PORT_C, 230);
-	BP.set_motor_position_relative(PORT_B, -230);
+	BP.set_motor_position_relative(PORT_C, -230);
+	BP.set_motor_position_relative(PORT_B, 230);
 }
 
 void hardRechts(){
-	BP.set_motor_position_relative(PORT_C, -340);
-	BP.set_motor_position_relative(PORT_B, 340);
+	BP.set_motor_position_relative(PORT_C, 340);
+	BP.set_motor_position_relative(PORT_B, -340);
 }
 
 void hardForward(){
@@ -81,8 +81,9 @@ float measureDistance(){
 }
 
 void checkObject(){
+		cout << "Je zit nu in checkObject" << "\n"
 		hardLinks();
-		usleep(5000);
+		sleep(1);
 		//Je kijkt nu tegen de zijkant van het object
 		if (measureDistance() < 40){
 			hardRechts();
@@ -90,19 +91,25 @@ void checkObject(){
 			usleep(5000);
 			checkObject();
 		}
+		else {
+			cout << "afstand is meer dan 40 cm << "\n";	
+		}
 	}
 
 void objectLoop(){
 	//Het object is gescant,ga naar rechts
-	hardLinks();
+	hardRechts();
 	sleep(1);
 	//Ga vooruit
 	hardForward();
 	sleep(1);
 	//Ga naar links
-	hardRechts();
+	hardLinks();
 	sleep(1);
+	cout << "vooruit gaan om object te dodgen" << "\n";
 	hardForward();
+	sleep(1);
+	cout << "Je zou nu naast het object moeten staan" << "\n";
 	//JE BENT HIER NAAST HET OBJECT EN JE KIJKT ER LANGS 
 	//Check of je het object nog ziet
 	checkObject();
