@@ -32,8 +32,8 @@ void hardLinks(){
 }
 
 void hardRechts(){
-	BP.set_motor_position_relative(PORT_C, 300);
-	BP.set_motor_position_relative(PORT_B, -300);
+	BP.set_motor_position_relative(PORT_C, 270);
+	BP.set_motor_position_relative(PORT_B, -270);
 }
 
 void hardForward(int val){
