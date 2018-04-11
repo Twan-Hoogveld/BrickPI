@@ -81,9 +81,11 @@ float measureDistance(){
 }
 
 void checkObject(){
+		sleep(1);
 		cout << "Links" << "\n";
 		hardLinks();
 		cout << "Vooruit 180" << "\n";
+		sleep(1);
 		hardForward(180);
 		cout << "Check het object" << "\n";
 		sleep(1);
