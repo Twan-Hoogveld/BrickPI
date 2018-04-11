@@ -91,6 +91,11 @@ void doit(){
         cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
         //Doe iets met de waarde
 		
+	if(measureDistance() <= 10){
+		objectLoop();
+		
+	}
+		
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goForward();}
 	    //<2000 is wit, < 400 is wit
@@ -119,12 +124,7 @@ int main(){
     BP.set_sensor_type(PORT_2, SENSOR_TYPE_NXT_ULTRASONIC);
     BP.offset_motor_encoder(PORT_B, BP.get_motor_encoder(PORT_B));
     BP.offset_motor_encoder(PORT_C, BP.get_motor_encoder(PORT_C));
-    
-    //doit();
-	while(true){
-        	cout << measureDistance() << "\n";
-		sleep(1);
-	}
+    doit();
 }
 
 
