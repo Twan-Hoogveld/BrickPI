@@ -99,7 +99,7 @@ void checkObject(){
 		}
 		else {
 			cout << "afstand is meer dan 40 cm, loop eindigt, zoek lijn op" << "\n";
-			hardForward(540);
+			hardForward(450);
 			sleep(2);
 			hardRechts();
 		}
