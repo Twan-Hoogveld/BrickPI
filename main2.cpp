@@ -122,8 +122,8 @@ int main(){
     
     //doit();
 	while(true){
-        cout << measureDistance();
-	sleep(1);
+        	cout << measureDistance() << "\n";
+		sleep(1);
 	}
 }
 
