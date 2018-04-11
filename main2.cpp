@@ -102,7 +102,7 @@ void objectLoop(){
 	//Ga naar links
 	hardRechts();
 	sleep(1);
-	hardForward()
+	hardForward();
 	//JE BENT HIER NAAST HET OBJECT EN JE KIJKT ER LANGS 
 	//Check of je het object nog ziet
 	checkObject();
