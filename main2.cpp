@@ -85,9 +85,10 @@ void checkObject(){
 		sleep(1);
 		//Je kijkt nu tegen de zijkant van het object
 		if (measureDistance() < 40){
-			cout << "RECHTS" << "\n";
+			cout << "Rechts" << "\n";
 			hardRechts();
 			sleep(1);
+			cout << "rerun" << "\n";
 			checkObject();
 		}
 		else {
@@ -111,6 +112,7 @@ void objectLoop(){
 	cout << "Je zou nu naast het object moeten staan" << "\n";
 	//JE BENT HIER NAAST HET OBJECT EN JE KIJKT ER LANGS 
 	//Check of je het object nog ziet
+	hardLinks();
 	checkObject();
 	sleep(1);
 }
