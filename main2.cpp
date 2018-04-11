@@ -123,7 +123,7 @@ void objectLoop(){
 
 void doit(){
 	while(true){
-	if(measureDistance() <= 20 && measureDistance() > 0){
+	if(measureDistance() <= 15 && measureDistance() > 0){
 		objectLoop();
 	}	
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
