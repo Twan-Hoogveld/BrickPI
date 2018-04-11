@@ -82,16 +82,16 @@ int main(){
 	    cout << "LIGHT SENSOR (PORT3) :" << measureLight() << "\n";
 	    cout << "RGB SENSOR (PORT1) :" << measureColor() << "\n";
         //Doe iets met de waarde
-	if(int(measureLight()) < 2000 && int(measureColor()) < 400){
+	if(int(measureLight()) < 2000 && int(measureColor()) < 300){
 		goForward();}
 	    //<2000 is wit, < 400 is wit
-	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
+	else if(int(measureLight()) > 2000 && int(measureColor()) < 300){
 		goLeft(-20, 50);}
 	    //>2000 is zwart, < 400 is wit
-	else if(int(measureLight()) < 2000 && int(measureColor()) > 400){
+	else if(int(measureLight()) < 2000 && int(measureColor()) > 300){
 		goRight(50, -20);}
 	    //<2000 is wit, > 400 is zwart
-	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
+	else if(int(measureLight()) > 2000 && int(measureColor()) > 300){
 		if(keuze % 2 == 0){
 			cout << "links:  " << keuze << "\n";
 			goLeft(-20, 50);}
