@@ -102,7 +102,7 @@ int main(){
 	    //>2000 is zwart, >400 is zwart
 	usleep(50000);
 	stop();
-        usleep(10000);
+        usleep(5000);
     }
   
 }
