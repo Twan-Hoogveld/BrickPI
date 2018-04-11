@@ -81,14 +81,15 @@ float measureDistance(){
 }
 
 void checkObject(){
-	if(measureDistance() < 40){
-		//Je kijkt nu tegen de zijkant van het object
 		hardLinks();
 		usleep(5000);
-		hardForward();
-		usleep(5000);
-		hardRechts();
-		usleep(5000);
+		//Je kijkt nu tegen de zijkant van het object
+		if (measureDistance() < 40){
+			hardRechts();
+			hardForward();
+			usleep(5000);
+			checkObject();
+		}
 	}
 }
 
@@ -102,11 +103,10 @@ void objectLoop(){
 	//Ga naar links
 	hardRechts();
 	sleep(1);
+	hardForward()
+	//JE BENT HIER NAAST HET OBJECT EN JE KIJKT ER LANGS 
 	//Check of je het object nog ziet
 	checkObject();
-	if (measureDistance() < 40){
-		checkObject();	
-	}
 	sleep(1);
 }
 
