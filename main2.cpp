@@ -36,9 +36,9 @@ void hardRechts(){
 	BP.set_motor_position_relative(PORT_B, -300);
 }
 
-void hardForward(){
-	BP.set_motor_position_relative(PORT_C, 540);
-	BP.set_motor_position_relative(PORT_B, 540);
+void hardForward(int val){
+	BP.set_motor_position_relative(PORT_C, val);
+	BP.set_motor_position_relative(PORT_B, val);
 }
 
 void goLeft(int valWheel1, int valWheel2){
@@ -81,6 +81,8 @@ float measureDistance(){
 }
 
 void checkObject(){
+		hardLinks();
+		hardForward(180);
 		cout << "Check het object" << "\n";
 		sleep(1);
 		//Je kijkt nu tegen de zijkant van het object
@@ -101,18 +103,17 @@ void objectLoop(){
 	hardRechts();
 	sleep(1);
 	//Ga vooruit
-	hardForward();
+	hardForward(540);
 	sleep(1);
 	//Ga naar links
 	hardLinks();
 	sleep(1);
 	cout << "vooruit gaan om object te dodgen" << "\n";
-	hardForward();
+	hardForward(540);
 	sleep(1);
 	cout << "Je zou nu naast het object moeten staan" << "\n";
 	//JE BENT HIER NAAST HET OBJECT EN JE KIJKT ER LANGS 
 	//Check of je het object nog ziet
-	hardLinks();
 	checkObject();
 	sleep(1);
 }
