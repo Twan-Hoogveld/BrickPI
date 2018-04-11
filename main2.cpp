@@ -32,8 +32,8 @@ void hardLinks(){
 }
 
 void hardRechts(){
-	BP.set_motor_position_relative(PORT_C, -330);
-	BP.set_motor_position_relative(PORT_B, 330);
+	BP.set_motor_position_relative(PORT_C, -340);
+	BP.set_motor_position_relative(PORT_B, 340);
 }
 
 void hardForward(){
@@ -80,17 +80,33 @@ float measureDistance(){
     return val;
 }
 
+void checkObject(){
+	if(measureDistance() < 40){
+		//Je kijkt nu tegen de zijkant van het object
+		hardLinks();
+		usleep(5000)
+		hardForward();
+		usleep(5000);
+		hardRechts();
+		usleep(5000);
+	}
+}
+
 void objectLoop(){
-	cout << "Links" << "\n";
+	//Het object is gescant,ga naar rechts
 	hardLinks();
-	cout << "Sleep" << "\n";
 	sleep(1);
-	cout << "Sleep afgelopen" << "\n";
-	cout << "vooruit" << "\n";
+	//Ga vooruit
 	hardForward();
 	sleep(1);
-	cout << "rechts" << "\n";
+	//Ga naar links
 	hardRechts();
+	sleep(1);
+	//Check of je het object nog ziet
+	checkObject();
+	if (measureDistance() < 40){
+		checkObject();	
+	}
 	sleep(1);
 }
 
