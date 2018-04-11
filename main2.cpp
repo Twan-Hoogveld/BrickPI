@@ -83,7 +83,9 @@ float measureDistance(){
 void objectLoop(){
 	cout << "Links" << "\n";
 	hardLinks();
+	cout << "Sleep" << "\n";
 	sleep(1);
+	cout << "Sleep afgelopen" << "\n";
 	cout << "vooruit" << "\n";
 	hardForward();
 	sleep(1);
@@ -94,12 +96,8 @@ void objectLoop(){
 
 void doit(){
 	while(true){
-        cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
-        //Doe iets met de waarde
-		
-	if(measureDistance() <= 10){
+	if(measureDistance() <= 10 && > measureDistance() > 0){
 		objectLoop();
-		
 	}
 		
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
