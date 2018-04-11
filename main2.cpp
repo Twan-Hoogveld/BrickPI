@@ -92,7 +92,7 @@ void checkObject(){
 			checkObject();
 		}
 		else {
-			cout << "afstand is meer dan 40 cm << "\n";	
+			cout << "afstand is meer dan 40 cm" << "\n";	
 		}
 	}
 
