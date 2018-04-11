@@ -87,7 +87,7 @@ void objectLoop(){
 }
 
 void doit(){
-	    while(true){
+	while(true){
         cout << "ULTRASONIC SENSOR (PORT2): " << measureDistance() << "cm" << "\n";
         //Doe iets met de waarde
 	if(measureDistance() < 10){
@@ -121,8 +121,8 @@ int main(){
     BP.set_sensor_type(PORT_1, SENSOR_TYPE_NXT_COLOR_RED);
     BP.set_sensor_type(PORT_3, SENSOR_TYPE_NXT_LIGHT_ON);
     BP.set_sensor_type(PORT_2, SENSOR_TYPE_NXT_ULTRASONIC);
-    //BP.offset_motor_encoder(PORT_B, BP.get_motor_encoder(PORT_B));
-    //BP.offset_motor_encoder(PORT_C, BP.get_motor_encoder(PORT_C));
+    BP.offset_motor_encoder(PORT_B, BP.get_motor_encoder(PORT_B));
+    BP.offset_motor_encoder(PORT_C, BP.get_motor_encoder(PORT_C));
     
     //doit();
      cout << measureDistance();
