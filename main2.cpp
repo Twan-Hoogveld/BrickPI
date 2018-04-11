@@ -105,11 +105,9 @@ void checkObject(){
 void objectLoop(){
 	cout << "Het object is gescanned, robot gaat naar rechts." << "\n";
 	hardRechts();
-	stop();
 	sleep(2);
 	cout << "Vooruit gaan om object te kunnen dodgen." << "\n";
 	hardForward(540);
-	stop();
 	sleep(2);
 	cout << "Ga naar links om object te scannen." << "\n";
 	hardLinks();
