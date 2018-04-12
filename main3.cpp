@@ -10,8 +10,6 @@ Port_C = Linker wiel
 #include <iostream>
 #include <signal.h>
 #include <unistd.h>
-#include <stdlib.h>
-#include <time.h>
 
 using namespace std;
 
@@ -81,41 +79,28 @@ float measureDistance(){
     return val;
 }
 
-void hardTurn(){
-	hardLinks();
-	sleep(1);
-	hardLinks();
-}
-
-
-
 void doit(){
 	while(true){
 	if(measureDistance() <= 15 && measureDistance() > 0){
-		cout << "Object gevonden" << "\n";
-		hardTurn();
+		hardLinks();
+		sleep(1)
+		hardLinks();
+		sleep(1);
 	}	
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
-		goForward();
-		cout << "Wit, wit" << "\n";
-		//<2000 is wit, < 400 is wit
-	}
+		goForward();}
+	    //<2000 is wit, < 400 is wit
 	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
-		goLeft(-20, 50);
-		cout << "Zwart, wit" << "\n";
-		//>2000 is zwart, < 400 is wit
-	}
+		goLeft(-20, 50);}
+	    //>2000 is zwart, < 400 is wit
 	else if(int(measureLight()) < 2000 && int(measureColor()) > 400){
-		goRight(50, -20);
-		cout << "Wit, zwart" << "\n";
-		//<2000 is wit, > 400 is zwart
-	}
+		goRight(50, -20);}
+	    //<2000 is wit, > 400 is zwart
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
-		goLeft(-20, 50);
-		cout << "Zwart, zwart" << "\n";
-		//>2000 is zwart, >400 is zwart
-	}
+			goLeft(-20, 50);}
+	    //>2000 is zwart, >400 is zwart
 	usleep(50000);
+	cout << "Lijn volgen" << "\n";
 	stop();
   	usleep(10000);
     }	
@@ -142,4 +127,3 @@ void exit_signal_handler(int signo){
     exit(-2);
   }
 }
-
