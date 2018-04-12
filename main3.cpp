@@ -111,6 +111,7 @@ void doit(){
 		//<2000 is wit, > 400 is zwart
 	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
+		/*
 		srand (time(NULL));
 		int dice = rand()%3;
 		if(dice == 0){
@@ -125,7 +126,10 @@ void doit(){
 		}
 		cout << "Zwart, zwart" << "\n";
 		//>2000 is zwart, >400 is zwart
-	}
+		}
+		*/
+		goLeft(-20, 50);}
+	
 	usleep(50000);
 	stop();
   	usleep(10000);
