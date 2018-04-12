@@ -106,10 +106,10 @@ void doit(){
 	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
 		srand (time(NULL));
 		int dice = rand()%8;
-		if (dice == 0 or 1 or 2){
+		if (dice < 3){
 			goLeft(-20, 50);
 		}
-		else if (dice == 3 or 4 or 6){
+		else if (dice > 2 && dice < 7){
 			goRight(50, -20);
 		}
 		else if(dice == 7){
