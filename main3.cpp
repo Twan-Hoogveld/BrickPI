@@ -87,9 +87,10 @@ void hardTurn(){
 	hardLinks();
 }
 
-void random(){
+int random(){
 	srand (time(NULL));
-	rand ()%3;
+	int dice = rand ()%3;
+	return dice;
 }
 
 void doit(){
