@@ -87,11 +87,7 @@ void hardTurn(){
 	hardLinks();
 }
 
-int random(){
-	srand (time(NULL));
-	int dice = rand()%3;
-	return dice;
-}
+
 
 void doit(){
 	while(true){
@@ -115,10 +111,11 @@ void doit(){
 		//<2000 is wit, > 400 is zwart
 	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
-		int randomPos = random();
-		if(randomPos == 0){
+		srand (time(NULL));
+		int dice = rand()%3;
+		if(dice == 0){
 			goForward();
-		}else if(randomPos == 1){
+		}else if(dice == 1){
 			goLeft(-20, 50);
 		}else{
 			goRight(50, -20);
