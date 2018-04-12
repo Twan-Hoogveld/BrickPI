@@ -79,6 +79,7 @@ float measureDistance(){
     return val;
 }
 
+
 void doit(){
 	while(true){
 	if(measureDistance() <= 15 && measureDistance() > 0){
@@ -125,3 +126,4 @@ void exit_signal_handler(int signo){
     exit(-2);
   }
 }
+
