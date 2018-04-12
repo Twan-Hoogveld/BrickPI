@@ -10,6 +10,8 @@ Port_C = Linker wiel
 #include <iostream>
 #include <signal.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -85,6 +87,11 @@ void hardTurn(){
 	hardLinks();
 }
 
+void random(){
+	srand (time(NULL));
+	rand ()%3;
+}
+
 void doit(){
 	while(true){
 	if(measureDistance() <= 15 && measureDistance() > 0){
@@ -101,7 +108,15 @@ void doit(){
 		goRight(50, -20);}
 	    //<2000 is wit, > 400 is zwart
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
-			goLeft(-20, 50);}
+		int random = random();
+		if(random == 0){
+			goForward(50, -20);
+		}else if(random == 1){
+			goLeft(-20, 50);
+		}else{
+			goRight 50, -20);
+		}
+	}
 	    //>2000 is zwart, >400 is zwart
 	usleep(50000);
 	cout << "Lijn volgen" << "\n";
