@@ -10,6 +10,9 @@ Port_C = Linker wiel
 #include <iostream>
 #include <signal.h>
 #include <unistd.h>
+#include <stdio.h>      /* printf, NULL */
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 using namespace std;
 
@@ -101,13 +104,13 @@ void doit(){
 		//<2000 is wit, < 400 is zwart
 	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
-		goForward();
-		sleep(1);
-		if (int(measureLight()) < 2000 && int(measureColor()) > 400){
-			hardLinks();
-			sleep(1);
-			hardLinks();
-			sleep(1);
+		srand (time(NULL));
+		int dice = rand()%1;
+		if (dice == 1){
+			goLeft(-20, 50);
+		}
+		else{
+			goRight(50, -20);
 		}
 		// >2000 is zwart, <400 is zwart
 	}
