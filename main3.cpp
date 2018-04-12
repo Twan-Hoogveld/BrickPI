@@ -81,9 +81,8 @@ float measureDistance(){
 
 void hardTurn(){
 	hardLinks();
-	sleep(2);
+	sleep(1);
 	hardLinks();
-	sleep(2);
 }
 
 void doit(){
