@@ -83,6 +83,7 @@ float measureDistance(){
 }
 
 void doit(){
+	int counter = 0;
 	while(true){
 	if(measureDistance() <= 15 && measureDistance() > 0){
 		hardLinks();
@@ -92,27 +93,30 @@ void doit(){
 	}	
         if(int(measureLight()) < 2000 && int(measureColor()) > 400){
 		goForward();
+		counter++;
 		//< 2000 is wit, >450 is wit
 	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
 		goLeft(-20, 50);
+		counter = 0;
 		//>2200 is zwart, >450 is wit
 	}
 	else if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goRight(50, -20);
+		counter = 0;
 	
 		//<2000 is wit, < 400 is zwart
 	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
 		srand (time(NULL));
-		int dice = rand()%8;
-		if (dice < 3){
+		int dice = rand()%3;
+		if (dice == 0){
 			goLeft(-20, 50);
 		}
-		else if (dice > 2 && dice < 7){
+		else if (dice == 1){
 			goRight(50, -20);
 		}
-		else if(dice == 7){
+		else if(dice == 2){
 			goForward();
 		}
 		// >2000 is zwart, <400 is zwart
@@ -120,6 +124,7 @@ void doit(){
 	usleep(50000);
 	stop();
   	usleep(10000);
+	cout << counter << "\n";
     }	
 }
 
