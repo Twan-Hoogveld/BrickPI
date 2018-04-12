@@ -115,10 +115,13 @@ void doit(){
 		int dice = rand()%3;
 		if(dice == 0){
 			goForward();
+			sleep(1);
 		}else if(dice == 1){
 			goLeft(-20, 50);
+			sleep(1);
 		}else{
 			goRight(50, -20);
+			sleep(1);
 		}
 		cout << "Zwart, zwart" << "\n";
 		//>2000 is zwart, >400 is zwart
