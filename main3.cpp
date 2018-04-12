@@ -128,7 +128,9 @@ void doit(){
 		//>2000 is zwart, >400 is zwart
 		}
 		*/
-		goLeft(-20, 50);}
+		goLeft(-20, 50);
+		cout << "Zwart, zwart" << "\n";
+	}
 	
 	usleep(50000);
 	stop();
