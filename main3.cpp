@@ -87,7 +87,7 @@ void doit(){
 		hardLinks();
 		sleep(1);
 	}	
-        if(int(measureLight()) < 2000 && int(measureColor()) > 400){
+        if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		cout << measureLight() << " , " << measureColor() << "\n";
 		cout << "wit wit" << "\n";
 		goForward();
