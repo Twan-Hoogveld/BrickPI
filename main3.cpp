@@ -114,10 +114,10 @@ void doit(){
 		//<2000 is wit, > 400 is zwart
 	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
-		int random = random();
-		if(random == 0){
+		int randomPos = random();
+		if(randomPos == 0){
 			goForward(50, -20);
-		}else if(random == 1){
+		}else if(randomPos == 1){
 			goLeft(-20, 50);
 		}else{
 			goRight(50, -20);
