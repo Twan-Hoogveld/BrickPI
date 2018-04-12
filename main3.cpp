@@ -89,7 +89,7 @@ void hardTurn(){
 
 int random(){
 	srand (time(NULL));
-	int dice = rand ()%3;
+	int dice = rand()%3;
 	return dice;
 }
 
