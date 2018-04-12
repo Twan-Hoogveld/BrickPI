@@ -108,6 +108,8 @@ void doit(){
 		//<2000 is wit, < 400 is zwart
 	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
+		goForward();
+		/*
 		srand (time(NULL));
 		int dice = rand()%3;
 		if (dice == 0){
@@ -120,6 +122,7 @@ void doit(){
 			goForward();
 		}
 		// >2000 is zwart, <400 is zwart
+		*/
 	}
 	usleep(50000);
 	stop();
