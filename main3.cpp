@@ -119,11 +119,13 @@ void doit(){
 		int dice = rand()%2;
 		if (dice == 0){
 			goLeft(-20, 50);
-			sleep(2);
+			sleep(1);
+			usleep(30000);
 		}
 		else if (dice == 1){
 			goRight(50, -20);
-			sleep(2);
+			sleep(1);
+			usleep(30000);
 		}
 		// >2000 is zwart, <400 is zwart
 	}
