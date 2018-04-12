@@ -87,22 +87,22 @@ void doit(){
 		hardLinks();
 		sleep(1);
 	}	
-        if(int(measureLight()) < 2000 && int(measureColor()) > 450){
+        if(int(measureLight()) < 2000 && int(measureColor()) > 400){
 		goForward();
 		//< 2000 is wit, >450 is wit
 	}
-	else if(int(measureLight()) > 2200 && int(measureColor()) > 450){
+	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
 		goLeft(-20, 50);
 		//>2200 is zwart, >450 is wit
 	}
-	else if(int(measureLight()) < 2000 && int(measureColor()) < 350){
+	else if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goRight(50, -20);
 	
-		//<2000 is wit, < 350 is zwart
+		//<2000 is wit, < 400 is zwart
 	}
-	else if(int(measureLight()) < 2200 && int(measureColor()) < 350){
+	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
 		goRight(50, -20);
-		//<2200 is zwart, >350 is zwart
+		// >2000 is zwart, <400 is zwart
 	}
 	usleep(50000);
 	stop();
