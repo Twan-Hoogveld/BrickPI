@@ -99,14 +99,20 @@ void doit(){
 		hardTurn();
 	}	
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
-		goForward();}
-	    //<2000 is wit, < 400 is wit
+		goForward();
+		cout << "Wit, wit" << "\n";
+		//<2000 is wit, < 400 is wit
+	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
-		goLeft(-20, 50);}
-	    //>2000 is zwart, < 400 is wit
+		goLeft(-20, 50);
+		cout << "Zwart, wit" << "\n";
+		//>2000 is zwart, < 400 is wit
+	}
 	else if(int(measureLight()) < 2000 && int(measureColor()) > 400){
-		goRight(50, -20);}
-	    //<2000 is wit, > 400 is zwart
+		goRight(50, -20);
+		cout << "Wit, zwart" << "\n";
+		//<2000 is wit, > 400 is zwart
+	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
 		int random = random();
 		if(random == 0){
@@ -114,12 +120,12 @@ void doit(){
 		}else if(random == 1){
 			goLeft(-20, 50);
 		}else{
-			goRight 50, -20);
+			goRight(50, -20);
 		}
+		cout << "Zwart, zwart" << "\n";
+		//>2000 is zwart, >400 is zwart
 	}
-	    //>2000 is zwart, >400 is zwart
 	usleep(50000);
-	cout << "Lijn volgen" << "\n";
 	stop();
   	usleep(10000);
     }	
