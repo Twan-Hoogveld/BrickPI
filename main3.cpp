@@ -116,7 +116,7 @@ void doit(){
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
 		int randomPos = random();
 		if(randomPos == 0){
-			goForward(50, -20);
+			goForward();
 		}else if(randomPos == 1){
 			goLeft(-20, 50);
 		}else{
