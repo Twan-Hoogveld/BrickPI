@@ -94,6 +94,13 @@ void doit(){
         if(int(measureLight()) < 2000 && int(measureColor()) > 400){
 		goForward();
 		counter++;
+		if(counter > 40){
+			hardLinks();
+			sleep(1);
+			hardLinks();
+			sleep(1);
+			counter = 0;
+		}
 		//< 2000 is wit, >450 is wit
 	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
