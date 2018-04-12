@@ -105,11 +105,11 @@ void doit(){
 	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
 		srand (time(NULL));
-		int dice = rand()%1;
+		int dice = rand()%2;
 		if (dice == 1){
 			goLeft(-20, 50);
 		}
-		else{
+		else if (dice == 0){
 			goRight(50, -20);
 		}
 		// >2000 is zwart, <400 is zwart
