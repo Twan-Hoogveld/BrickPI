@@ -14,3 +14,8 @@ Port_C = Linker wiel
 using namespace std;
 
 BrickPi3 BP;
+
+#include "BrickPi3.h"
+#include <iostream>
+#include <signal.h>
+#include <unistd.h>
