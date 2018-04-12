@@ -118,10 +118,12 @@ void doit(){
 		srand (time(NULL));
 		int dice = rand()%2;
 		if (dice == 0){
-			goLeft(-20, 50);
+			hardLinks();
+			sleep(1);
 		}
 		else if (dice == 1){
-			goRight(50, -20);
+			hardRechts();
+			sleep(1);
 		}
 		// >2000 is zwart, <400 is zwart
 	}
