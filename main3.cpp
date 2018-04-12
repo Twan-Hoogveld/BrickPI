@@ -94,7 +94,7 @@ void doit(){
         if(int(measureLight()) < 2000 && int(measureColor()) > 400){
 		goForward();
 		counter++;
-		if(counter > 30){
+		if(counter > 450){
 			hardLinks();
 			sleep(1);
 			hardLinks();
