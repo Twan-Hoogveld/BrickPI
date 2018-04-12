@@ -83,7 +83,6 @@ void doit(){
 	while(true){
 	if(measureDistance() <= 15 && measureDistance() > 0){
 		hardLinks();
-		sleep(1);
 		hardLinks();
 		sleep(1);
 	}	
