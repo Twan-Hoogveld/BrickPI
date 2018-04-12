@@ -87,19 +87,25 @@ void doit(){
 		sleep(1);
 	}	
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
-		goForward();}
+		cout << "Wit, wit" << "\n";
+		hardLinks();
+		hardLinks();
+		sleep(1);
+	}
 	    //<2000 is wit, < 400 is wit
 	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
+		cout << "Zwart, wit" << "\n";
 		goLeft(-20, 50);}
 	    //>2000 is zwart, < 400 is wit
 	else if(int(measureLight()) < 2000 && int(measureColor()) > 400){
+		cout << "Wit, zwart" << "\n";
 		goRight(50, -20);}
 	    //<2000 is wit, > 400 is zwart
 	else if(int(measureLight()) > 2000 && int(measureColor()) > 400){
-			goLeft(-20, 50);}
+		cout << "Zwart, zwart" << "\n";
+		goLeft(-20, 50);}
 	    //>2000 is zwart, >400 is zwart
 	usleep(50000);
-	cout << "Lijn volgen" << "\n";
 	stop();
   	usleep(10000);
     }	
