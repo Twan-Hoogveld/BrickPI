@@ -116,9 +116,9 @@ void doit(){
 		if(dice == 0){
 			goForward();
 		}else if(dice == 1){
-			goLeft(-20,50);
+			goLeft(-30,60);
 		}else{
-			goRight(50,-20);
+			goRight(60,-30);
 		}
 		cout << "Zwart, zwart" << "\n";
 		//>2000 is zwart, >400 is zwart
