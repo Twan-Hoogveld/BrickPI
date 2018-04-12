@@ -101,7 +101,7 @@ void doit(){
 		//<2000 is wit, < 400 is zwart
 	}
 	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
-		goLeft(-20, 50);
+		goForward();
 		// >2000 is zwart, <400 is zwart
 	}
 	usleep(50000);
