@@ -79,12 +79,18 @@ float measureDistance(){
     return val;
 }
 
+void hardTurn(){
+	hardLinks();
+	sleep(2);
+	hardLinks();
+	sleep(2);
+}
 
 void doit(){
 	while(true){
 	if(measureDistance() <= 15 && measureDistance() > 0){
-		hardLinks();
-		hardLinks();
+		cout << "Object gevonden" << "\n";
+		hardTurn();
 	}	
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goForward();}
