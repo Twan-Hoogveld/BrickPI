@@ -94,7 +94,7 @@ void doit(){
 	    //<2000 is wit, < 400 is wit
 	else if(int(measureLight()) > 2000 && int(measureColor()) < 400){
 		cout << "Zwart, wit" << "\n";
-		goRight(-20, 50);
+		goForward(-20, 50);
 	}
 	    //>2000 is zwart, < 400 is wit
 	else if(int(measureLight()) < 2000 && int(measureColor()) > 400){
