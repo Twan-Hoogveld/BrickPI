@@ -80,53 +80,11 @@ float measureDistance(){
     return val;
 }
 
-void checkObject(){
-		sleep(2);
-		cout << "Links draaien om object van zijkant te scannen." << "\n";
-		hardLinks();
-		cout << "Check of object er nog staat." << "\n";
-		sleep(2);
-		//Je kijkt nu tegen de zijkant van het object
-		if (measureDistance() < 40){
-			cout << "Object staat nog voor je" << "\n";
-			cout << "Naar rechts draaien" << "\n";
-			hardRechts();
-			sleep(2);
-			cout << "Vooruit rijden" << "\n";
-			hardForward(360);
-			cout << "rerun checkObject functie" << "\n";
-			checkObject();
-		}
-		else {
-			cout << "afstand is meer dan 40 cm, loop eindigt, zoek lijn op" << "\n";
-			hardForward(450);
-			sleep(2);
-			hardRechts();
-		}
-	}
-
-void objectLoop(){
-	cout << "Het object is gescanned, robot gaat naar rechts." << "\n";
-	hardRechts();
-	sleep(2);
-	cout << "Vooruit gaan om object te kunnen dodgen." << "\n";
-	hardForward(540);
-	sleep(2);
-	cout << "Ga naar links om object te scannen." << "\n";
-	hardLinks();
-	sleep(2);
-	cout << "vooruit gaan om object te dodgen" << "\n";
-	hardForward(540);
-	sleep(2);
-	cout << "Je zou nu naast het object moeten staan" << "\n";
-	//Check of je het object nog ziet
-	checkObject();
-}
-
 void doit(){
 	while(true){
 	if(measureDistance() <= 15 && measureDistance() > 0){
-		objectLoop();
+		hardLinks();
+		hardLinks();
 	}	
         if(int(measureLight()) < 2000 && int(measureColor()) < 400){
 		goForward();}
