@@ -99,7 +99,7 @@ void doit(){
 		goLeft(-20, 50);
 		//>2000 is zwart, < 400 is wit
 	}
-	else if(int(measureLight()) < 2000 && int(measureColor()) > 400){
+	else if(int(measureLight()) < 2200 && int(measureColor()) > 500){
 		cout << measureLight() << " , " << measureColor() << "\n";
 		cout << "wit zwart" << "\n";
 		goRight(50, -20);
