@@ -117,10 +117,10 @@ void doit(){
 			goForward();
 			sleep(1);
 		}else if(dice == 1){
-			goLeft(-20, 50);
+			hardLinks();
 			sleep(1);
 		}else{
-			goRight(50, -20);
+			hardRechts();
 			sleep(1);
 		}
 		cout << "Zwart, zwart" << "\n";
